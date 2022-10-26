@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { PokemonResponse, Result } from "./interface/PokemonResponse"
 import CardPokemon from "./utils/CardPokemon"
+import { MdCatchingPokemon  } from "react-icons/md";
 
 export const PokemonComponent = () => {
     const [pokemons, setPokemons] = useState([])
@@ -25,15 +26,16 @@ export const PokemonComponent = () => {
         <div className="bg-cyan-900">
             <div className="w-auto text-center mb-10">
 
-                <h1 className="text-white font-bold text-8xl  ">Pokedex </h1>
-                <h1 className="text-white font-bold text-2xl  ">Search your pokemon </h1>
+                <h1 className="text-white font-bold text-8xl  ">P<span className="text-orange-600">o</span>kedex </h1>
+                <h2 className="text-white font-bold text-2xl  ">Search your p<span className="text-orange-600">o</span>kemon  </h2>
+                <h2 className="text-white font-bold text-9xl  ">  </h2>
                 
 
             </div>
 
     <div className="text-center  ">
-        <label className="mr-8 text-white font-bold ">Search Pokemon    :</label>
-        <input className="h-9 px-5 w-96  border-none outline-none  border-y-cyan-400 " type="text" placeholder="What pokemon are you looking for?" />
+        <label className="mr-8 text-white font-bold ">  Search Pokemon    :</label>
+        <input className="h-9 px-5 w-96  border-none outline-none  border-y-cyan-400 " type="text" placeholder=" What pokemon are you looking for?" />
     </div>
 
 <div className="cursor-pointer flex flex-wrap    " >
