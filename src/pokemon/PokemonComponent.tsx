@@ -22,24 +22,24 @@ export const PokemonComponent = () => {
 
 
     return (
-        <div className="bg-orange-600">
+        <div className="bg-cyan-900">
             <div className="w-auto text-center mb-10">
 
                 <h1 className="text-white font-bold text-8xl  ">Pokedex </h1>
-                <h1 className="text-white font-bold text-2xl  ">Busca tu pokemon </h1>
+                <h1 className="text-white font-bold text-2xl  ">Search your pokemon </h1>
                 
 
             </div>
 
-    <div className="text-center bg-slate-100 ">
-        <label className="mr-8 ">Buscar Pokemon</label>
-        <input className="px-5 invalid:text-pink-600 " type="text" placeholder="What pokemon are you looking for" />
+    <div className="text-center  ">
+        <label className="mr-8 text-white font-bold ">Search Pokemon    :</label>
+        <input className="h-9 px-5 w-96  border-none outline-none  border-y-cyan-400 " type="text" placeholder="What pokemon are you looking for?" />
     </div>
 
-<div className="cursor-pointer grid grid-rows-4 grid-flow-col gap-4      " >
+<div className="cursor-pointer flex flex-wrap    " >
     
 {pokemons.map((item: Result) => (
-                <div className="w-80 mt-12 bg-indigo-700 rounded-3xl">
+                <div className="w-80 mx-5 mt-10 bg-indigo-700 rounded-3xl">
 
                     <CardPokemon key={item.url}{...item} />
                 </div>

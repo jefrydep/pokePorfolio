@@ -28,9 +28,8 @@ const CardPokemon = ({ url, name }: Result) => {
 
   return (
     <div>
-      <h2 className='mb-8 text-center text-2xl text-white font-bold mt-14 '>{name}</h2>
+      <h2 className='mb-8 text-center text-2xl text-white font-bold mt-10 '>{name}</h2>
       <div className=' marker: '>
-      <h3 className='mb-5 text-center text-green-500 font-bold '>Pokemon tipo: < span className='mx-12 bg-teal-400 text-white px-3 py-1 rounded-full'> {typePokemon}</span></h3>
       <h3 className='mb-5 text-center text-green-500 font-bold '>Height: < span className='mx-12 bg-orange-600 text-white px-3 py-1 rounded-full'> {heighPokemon}</span></h3>
       <h3 className='mb-5 text-center text-green-500 font-bold '>Experience: < span className='mx-12 bg-teal-400 text-white px-3 py-1 rounded-full'> {experiencePokemon}</span></h3>
       <h3 className='mb-5 text-center text-green-500 font-bold '>Weight: < span className='mx-12 bg-teal-400 text-white px-3 py-1 rounded-full'> {weightPokemon}</span></h3>
@@ -38,8 +37,9 @@ const CardPokemon = ({ url, name }: Result) => {
 
       </div>
 
-      <div className=' '>
-        <img className=' ' src={imgPokemons} alt="" />
+      <div className='bg-slate-200 rounded-t-3xl '>
+        <img className='w-48 h-52' src={imgPokemons} alt="" />
+      <h3 className='mt-6 pb-8 text-center text-green-500 font-bold '>Pokemon type: < span className='mx-12 bg-teal-400 text-white px-3 py-1 rounded-full'> {typePokemon}</span></h3>
       </div>
     </div>
 
