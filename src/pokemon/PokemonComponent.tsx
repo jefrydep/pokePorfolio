@@ -38,7 +38,7 @@ export const PokemonComponent = () => {
         <input className="h-9 px-5 w-96  border-none outline-none  border-y-cyan-400 " type="text" placeholder=" What pokemon are you looking for?" />
     </div>
 
-<div className="cursor-pointer flex flex-wrap    " >
+<div className="cursor-pointer flex flex-wrap max-w-6xl m-auto" >
     
 {pokemons.map((item: Result) => (
                 <div className="w-80 mx-5 mt-10 bg-indigo-700 rounded-3xl">
