@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { PokemonResponse, Result } from "./interface/PokemonResponse"
 import CardPokemon from "./utils/CardPokemon"
 import { MdCatchingPokemon  } from "react-icons/md";
+import 'animate.css';
 
 export const PokemonComponent = () => {
     const [pokemons, setPokemons] = useState([])
@@ -41,7 +42,7 @@ export const PokemonComponent = () => {
 <div className="cursor-pointer flex flex-wrap max-w-6xl m-auto" >
     
 {pokemons.map((item: Result) => (
-                <div className="w-80 mx-5 mt-10 bg-indigo-700 rounded-3xl">
+                <div className="  w-80 mx-5 mt-10 bg-indigo-700 rounded-3xl">
 
                     <CardPokemon key={item.url}{...item} />
                 </div>

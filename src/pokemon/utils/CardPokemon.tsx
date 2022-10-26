@@ -39,7 +39,7 @@ const CardPokemon = ({ url, name }: Result) => {
       </div>
 
       <div className='bg-slate-200 rounded-t-3xl'>
-        <img className='w-48 h-52 m-7 ' src={imgPokemons} alt="" />
+        <img className='w-48 h-52 m-7 animate__animated animate__tada ' src={imgPokemons} alt="" />
       <h3 className='mt-6 pb-8 text-center text-green-500 font-bold '>Pokemon type: < span className='mx-12 bg-teal-400 text-white px-3 py-1 rounded-full'> {typePokemon}</span></h3>
       </div>
     </div>
