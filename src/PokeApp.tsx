@@ -1,19 +1,9 @@
-import { PokemonComponent } from "./pokemon/PokemonComponent"
-
+import { PokemonComponent } from "./pokemon/PokemonComponent";
 
 export const PokeApp = () => {
-
-
-
-
-
-
-
   return (
-    < >
-      < PokemonComponent />
-    </ >
-
-
-  )
-}
+    <>
+      <PokemonComponent />
+    </>
+  );
+};
