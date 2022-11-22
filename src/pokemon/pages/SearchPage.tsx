@@ -1,41 +1,43 @@
 import axios from "axios";
 import { ChangeEvent, useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
 
 import useForm from "../hooks/UserForm";
+import { PokemonsResult } from "../interface/PokemonResult";
 
 const SearchPage = () => {
-  const [pokemonData, setPokemonData] = useState();
+  const [pokemonData, setPokemonData] = useState<PokemonsResult>();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { pokemonName, handleChange } = useForm({
+  const { q } = queryString.parse(location.search);
+  console.log({ q });
 
+  const { pokemonName, handleChange } = useForm({
     pokemonName: "",
   });
 
-  const getPokemonByName = async (name: any) => {
+  const getPokemonByName = async () => {
     // const URL = `https://pokeapi.co/api/v2/pokemon/ditto`;
-    const URL = `https://pokeapi.co/api/v2/pokemon/${name}`;
+    const URL = `https://pokeapi.co/api/v2/pokemon/${q}`;
     await axios
       .get(URL)
       .then((resp) => setPokemonData(resp.data))
       .catch((err) => console.log(err));
   };
-  const { q = "" } = queryString.parse(location.search);
-  console.log(q);
   useEffect(() => {
-    getPokemonByName(q);
-  }, []);
+    getPokemonByName();
+  }, [q]);
 
   const onSearchSubmit = (event: any) => {
-    event.prevetDefault();
+    event.preventDefault();
     if (pokemonName.trim().length <= 1) return;
     navigate(`?q=${pokemonName}`);
+    console.log({ pokemonName });
   };
 
-  console.log(pokemonData);
+   
 
   return (
     <div className="bg-cyan-900 h-screen">
@@ -48,6 +50,7 @@ const SearchPage = () => {
             search Your Pokemon :
           </label>
           <input
+            autoComplete="off"
             value={pokemonName}
             name="pokemonName"
             onChange={handleChange}
@@ -58,7 +61,9 @@ const SearchPage = () => {
         </form>
         <hr className="mb-8" />
       </div>
-      <section className="max-w-6xl m-auto">pokemon results</section>
+      <section className="max-w-6xl m-auto">
+ 
+      </section>
     </div>
   );
 };
