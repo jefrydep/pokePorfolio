@@ -1,7 +1,10 @@
 
 const FavoritePage = () => {
   return (
-    <h1>FavoritePage</h1>
+    <div className="bg-cyan-900">
+
+      <h1>FavoritePage</h1>
+    </div>
   )
 }
 

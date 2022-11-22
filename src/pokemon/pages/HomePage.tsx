@@ -1,28 +1,28 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { Result } from '../interface/PokemonResponse';
-import CardPokemon from '../utils/CardPokemon';
-
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Result } from "../interface/PokemonResponse";
+import CardPokemon from "../utils/CardPokemon";
 
 const HomePage = () => {
+  const [pokemons, setPokemons] = useState([]);
+  const getpokemons = () => {
+    const URL = `https://pokeapi.co/api/v2/pokemon?limit=30&offset=0`;
 
-    const [pokemons, setPokemons] = useState([]);
+    axios
+      .get(URL)
+      .then((resp) => setPokemons(resp.data.results))
+      .catch((err) => console.log(err));
+  };
 
-    useEffect(() => {
-      getpokemons();
-    }, []);
-    const getpokemons = () => {
-      const URL = `https://pokeapi.co/api/v2/pokemon?limit=30&offset=0`;
-  
-      axios
-        .get(URL)
-        .then((resp) => setPokemons(resp.data.results))
-        .catch((err) => console.log(err));
-    };
-    console.log(pokemons);
+  useEffect(() => {
+    getpokemons();
+  }, []);
+  // console.log(pokemons);
   return (
-    < > 
-          <div className="w-auto text-center mb-10">
+    <div className="bg-cyan-900">
+
+    
+      <div className="w-auto text-center mb-10">
         <h1 className="text-white font-bold text-8xl  ">
           P<span className="text-orange-600">o</span>kedex{" "}
         </h1>
@@ -39,13 +39,14 @@ const HomePage = () => {
 
       <div className="cursor-pointer flex flex-wrap max-w-6xl m-auto">
         {pokemons.map((item: Result) => (
-          <div className="  w-80 mx-5 mt-10 bg-indigo-700 rounded-3xl">
-            <CardPokemon key={item.url} {...item} />
+            <div className="  w-80 mx-5 mt-10 bg-indigo-700 rounded-3xl">
+            <CardPokemon key={item.name} {...item} />
           </div>
         ))}
       </div>
-    </ >
-  )
-}
+        </div>
+    
+  );
+};
 
-export default HomePage
+export default HomePage;

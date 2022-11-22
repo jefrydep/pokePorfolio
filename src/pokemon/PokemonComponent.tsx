@@ -11,7 +11,7 @@ export const PokemonComponent = () => {
  
 
   return (
-    <div className="bg-cyan-900">
+    <div className="">
       <NavBar />
       <RoutesApp />
     
