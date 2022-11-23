@@ -39,7 +39,7 @@ const HomePage = () => {
 
       <div className="cursor-pointer flex flex-wrap max-w-6xl m-auto">
         {pokemons.map((item: Result) => (
-            <div className="  w-80 mx-5 mt-10 bg-indigo-700 rounded-3xl">
+            <div className="  w-80  mx-5 mt-10 bg-indigo-700 rounded-3xl">
             <CardPokemon key={item.name} {...item} />
           </div>
         ))}
